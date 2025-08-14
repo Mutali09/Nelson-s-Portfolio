@@ -24,7 +24,7 @@ const Projects = () => {
       technologies: ['React 18', 'CSS3', 'JavaScript ES6+'],
       category: 'frontend',
       liveDemo: 'https://to-do-app-seven-gray.vercel.app',
-      github: 'https://github.com/Mutali0/To-Do-App',
+      github: 'https://github.com/Mutali09/To-Do-App',
       featured: true
     },
     {
@@ -40,13 +40,13 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website built with React and Tailwind CSS. Features smooth animations, dark mode toggle, and optimized performance for showcasing projects.',
-      image: '🎨',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
+      title: 'Gym Website',
+      description: 'A modern gym website built with React JSX and Vite. Features smooth scroll effects, responsive design, and interactive components for showcasing gym services and membership options.',
+      image: '💪',
+      technologies: ['React JSX', 'Vite', 'CSS3', 'JavaScript ES6+'],
       category: 'frontend',
-      liveDemo: 'https://nelson-portfolio.com',
-      github: 'https://github.com/nelson/portfolio',
+      liveDemo: 'https://truth-nim5k55l6-mutali09s-projects.vercel.app/',
+      github: 'https://github.com/Mutali09/Webstack---Portfolio-Project.git',
       featured: false
     },
     {
