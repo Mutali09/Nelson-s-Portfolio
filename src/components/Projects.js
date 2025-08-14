@@ -18,13 +18,13 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Perfect for project management and team coordination.',
-      image: '📋',
-      technologies: ['React', 'Firebase', 'Tailwind CSS', 'DnD Kit'],
+      title: 'Todo App',
+      description: 'A simple React todo application with a modern UI design. Features clean interface, task management, and responsive design for seamless user experience.',
+      image: '✅',
+      technologies: ['React 18', 'CSS3', 'JavaScript ES6+'],
       category: 'frontend',
-      liveDemo: 'https://task-app-demo.com',
-      github: 'https://github.com/nelson/task-manager',
+      liveDemo: 'https://to-do-app-seven-gray.vercel.app',
+      github: 'https://github.com/Mutali0/To-Do-App',
       featured: true
     },
     {
