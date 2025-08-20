@@ -12,8 +12,8 @@ const Projects = () => {
       image: '🛒',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       category: 'fullstack',
-      liveDemo: 'https://demo-ecommerce.com',
-      github: 'https://github.com/nelson/ecommerce-platform',
+      liveDemo: 'https://ecommerce-platform-demo.vercel.app',
+      github: 'https://github.com/Mutali09/Ecommerce-Platform',
       featured: true
     },
     {

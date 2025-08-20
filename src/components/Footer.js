@@ -16,19 +16,19 @@ const Footer = () => {
     {
       name: 'GitHub',
       icon: <Github size={20} />,
-      url: 'https://github.com/nelson',
+      url: 'https://github.com/Mutali09',
       color: 'hover:text-gray-600'
     },
     {
       name: 'LinkedIn',
       icon: <Linkedin size={20} />,
-      url: 'https://linkedin.com/in/nelson',
+      url: 'https://linkedin.com/in/nelson-mutali',
       color: 'hover:text-blue-600'
     },
     {
       name: 'Email',
       icon: <Mail size={20} />,
-      url: 'mailto:nelson@example.com',
+      url: 'mailto:nelsonsimiyu9@gmail.com',
       color: 'hover:text-red-600'
     }
   ];
