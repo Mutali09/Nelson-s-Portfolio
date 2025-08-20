@@ -45,7 +45,7 @@ const Projects = () => {
       image: '💪',
       technologies: ['React JSX', 'Vite', 'CSS3', 'JavaScript ES6+'],
       category: 'frontend',
-      liveDemo: 'webstack-portfolio-project-psi.vercel.app',
+      liveDemo: 'https://webstack-portfolio-project-psi.vercel.app/',
       github: 'https://github.com/Mutali09/Webstack---Portfolio-Project.git',
       featured: false
     },
