@@ -107,9 +107,9 @@ const About = () => {
                       <BookOpen size={16} className="text-primary-600" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-secondary-800">Self-Taught Developer</h4>
+                      <h4 className="font-medium text-secondary-800">Software Engineering Graduate</h4>
                       <p className="text-sm text-secondary-600">
-                        Continuously learning and improving through personal projects and online resources
+                        Completed a 13-month Software Engineering program at ALX and enhanced skills through FreeCodeCamp and personal projects. Continuously learning and building with modern tools and technologies.
                       </p>
                     </div>
                   </div>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, Send, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,14 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  useEffect(() => {
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init({ publicKey });
+    }
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,39 +28,55 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError('');
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('Missing EmailJS environment variables');
+      }
+
+      await emailjs.send(serviceId, templateId, {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message
+      });
+
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setSubmitError('Sorry, we could not send your message. Please try again or email me directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      value: 'nelson@example.com',
-      link: 'mailto:nelson@example.com',
+      value: 'nelsonsimiyu9@gmail.com',
+      link: 'mailto:nelsonsimiyu9@gmail.com',
       color: 'bg-blue-100 text-blue-600'
     },
     {
       icon: <Github size={24} />,
       title: 'GitHub',
-      value: 'github.com/nelson',
-      link: 'https://github.com/nelson',
+      value: 'github.com/Mutali09',
+      link: 'https://github.com/Mutali09',
       color: 'bg-gray-100 text-gray-600'
     },
     {
       icon: <Linkedin size={24} />,
       title: 'LinkedIn',
-      value: 'linkedin.com/in/nelson',
-      link: 'https://linkedin.com/in/nelson',
+      value: 'linkedin.com/in/nelson-mutali',
+      link: 'https://linkedin.com/in/nelson-mutali',
       color: 'bg-blue-100 text-blue-600'
     }
   ];
@@ -84,6 +109,17 @@ const Contact = () => {
                     <CheckCircle size={20} className="text-green-600" />
                     <p className="text-green-800 font-medium">
                       Thank you! Your message has been sent successfully.
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {submitError && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle size={20} className="text-red-600" />
+                    <p className="text-red-800 font-medium">
+                      {submitError}
                     </p>
                   </div>
                 </div>
