@@ -34,8 +34,8 @@ const Projects = () => {
       image: '🌤️',
       technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation'],
       category: 'frontend',
-      liveDemo: 'https://weather-dashboard-demo.com',
-      github: 'https://github.com/nelson/weather-app',
+      liveDemo: 'https://weather-app-blush-five-29.vercel.app',
+      github: 'https://github.com/Mutali09/Weather-App',
       featured: false
     },
     {
